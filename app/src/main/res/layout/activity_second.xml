@@ -2,8 +2,8 @@
 
 <fragment
     xmlns:android="http://schemas.android.com/apk/res/android"
-    class="asb.m08.Fragments.MainFragment"
-    android:id="@+id/FrgFirst"
+    class="asb.m08.Fragments.SecondFragment"
+    android:id="@+id/FrgSecond"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-/>
+    />
