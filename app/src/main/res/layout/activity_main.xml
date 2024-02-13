@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<fragment
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    class="asb.m08.Fragments.MainFragment"
-    android:id="@+id/FrgFirst"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-/>
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/FrgFirst"
+        android:name="asb.m08.Fragments.MainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+</LinearLayout>

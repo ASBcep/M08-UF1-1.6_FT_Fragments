@@ -1,17 +1,16 @@
 package asb.m08.Fragments
 
-import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-class MainFragment: Fragment() {
+class MainFragment: Fragment()
+{
+    private lateinit var listener: MyOnClickListener
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -19,23 +18,31 @@ class MainFragment: Fragment() {
     ): View?
     {
         //obtenim el layout del fragment (unió kotlin - xml)
-        var view = inflater.inflate(R.layout.fragment_main, container, false)
+        val view = inflater.inflate(R.layout.fragment_main, container, false)
 
-        var txtNumber = view.findViewById<EditText>(R.id.TxtData)
-        var btnOk = view.findViewById<Button>(R.id.BtnOk)
+        val txtNumber = view.findViewById<EditText>(R.id.TxtData)
+        val btnOk = view.findViewById<Button>(R.id.BtnOk)
 
         btnOk.setOnClickListener()
         {
-            var numTxt = txtNumber.text.toString()
+            val numTxt = txtNumber.text.toString()
             if (numTxt != "")
             {
-                var num = numTxt.toInt()
-                var intent = Intent(activity, SecondActivity::class.java)
+                val num = numTxt.toInt()
+                listener.onClick(num)
+
+                /*var intent = Intent(activity, SecondActivity::class.java)
                 intent.putExtra("number",num)
-                startActivity(intent)
+                startActivity(intent)*/
             }
         }
         return view
     }
-
+    fun setListener(listen: MyOnClickListener?)
+    {
+        if (listen != null)
+        {
+            listener = listen
+        }
+    }
 }
