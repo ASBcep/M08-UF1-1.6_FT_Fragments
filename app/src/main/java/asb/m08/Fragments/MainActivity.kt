@@ -24,7 +24,5 @@ class MainActivity : AppCompatActivity(), MyOnClickListener {
         {
             secondFragment.setNumber(num)
         }
-
     }
-
 }
